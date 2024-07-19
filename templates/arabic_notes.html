@@ -1,0 +1,111 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static "arabic.css" %}">
+    <link rel="stylesheet" href="{% static "a.css" %}">
+    <title>Document</title>
+
+</head>
+<header class="nav-bar">
+    <nav>
+    <section class="nav-name">
+    <img src="{% static "img/logo.png" %}" class="logo-project" alt="">
+    </section>
+        <section class="others">
+            <section class="others1"><span class="others-subject" onclick="menu()">مواد</span><img class="others-arrow" id="menu-subject" src="{% static "img/arow.png" %}" alt=""  onclick="menu()" >
+            <section id="menu-bar1" class="menu-bar" style="display: none;" >
+                <a href="arabic.php">عربية</a>
+                <a href="pages/math.html">رياضيات</a>
+                <a href="pages/french.html">فرنسية</a>
+                <a href="pages/english.html">إنجليزية</a>
+                <a href="pages/igti.html">إجتماعيات </a>
+                <a href="pages/madania.html">ت.مدنية </a>
+                <a href="pages/islamic.html" style="margin-right: 5px;" >ت.إسلامية </a>
+                </section></section>
+            <section class="others1"><span class="others-subject">تواصل معنا</span><img class="others-arrow" src="{% static "img/arow.png" %}" alt=""></section>
+        </section>
+        <button class="sign-button" >سجل</button></section>
+</header>
+    <body style=" background-image: url({% static "img/relation.jpg" %}); ">
+        
+            
+    <p class="sign">تحصل على ملاحظاتك</p>
+    <form action="{% url 'show_note' %}" method="post" >
+        {% csrf_token %}
+        <div class="n">
+        <input type="text" name="name-surname" placeholder="أدخل إسمك و لقبك" id="q1" class="input-sign" >
+        <input type="text" name="year_of_study" placeholder="أدخل السنة الدراسية" id="q2" class="input-sign" >
+        <button name="submit" style="display:block;color: yellow;background-color:rgb(9,2,84) ;border:0px;box-shadow:0 0 10px black ;border-radius: 15px;width: 120px;font-size: 20px;height: 50px;font-family:cursive;margin-left: 120px;cursor: pointer;transition: 1.5s;font-weight: bold;" 
+        >أنقر</button>
+        <div style="    text-align: center;
+    font-family: cinizel;
+    color: yellow;" ><p></p>
+</div>
+    </div>
+    </form>
+    <p class="p1"> Welcome to the Arabic subject <br>
+            with Teacher Fares Brinis <br>
+        </p>
+        <form  action="{% url 'save_chat' %}" method="post">
+            {% csrf_token %}
+    <div class="sh" id="de"></div>
+    <div class="gh" id="gh" style="font-family: cinizel;color:blueviolet;font-size:20px;" >{{ note }}{{ show }}{{ chat_words }}</div>
+        <input class="i" type="text" id="ini" name="chat_words" placeholder="اكتب تعليقاتك بالعربية ">
+    <button class="b2" name="save">ليحفظ التعليق</button>
+</form>
+<button class="b2" onclick="sendMessage();" style="margin-left: 21.1cm;">عرض لاتعليقات</button>
+</body>
+<script>
+    function menu(){
+        let Menu=document.getElementById('menu-bar1');
+        if (Menu.style.display === 'none') {
+            Menu.style.display = 'block';
+            Menu.style.display = 'flex';
+        }
+        else {
+            Menu.style.display = 'none';
+        }
+    }
+    function menu2() {
+    let Menu = document.getElementById('menu-bar2');
+
+    // Toggle display if it's currently hidden
+    if (Menu.style.display === 'none') {
+        Menu.style.display = 'block';
+        Menu.style.display = 'flex';
+    } else {
+        Menu.style.display = 'none'; // Hide the menu if it's currently shown
+    }
+
+    // Check if the height of the menu is less than or equal to 20
+    if (Menu.clientHeight <= 50) {
+        Menu.style.overflow = 'auto'; // Set overflow to auto if the height is less than or equal to 20
+    }
+    }
+    var name; // Declare name as a global variable
+    function sendMessage() {
+        var userInput = document.getElementById('ini').value;
+        displayMessage(formattedDate+' '+'أنت : ' + userInput);
+        // You can add further processing or send the message to a server here
+        document.getElementById('ini').value = ''; // Clear the input field
+    }
+    
+    function displayMessage(message) {
+        var chatBox = document.getElementById('gh');
+        var newMessage = document.createElement('div');
+        newMessage.textContent = message;
+        chatBox.appendChild(newMessage);
+        chatBox.scrollTop = chatBox.scrollHeight; // Auto-scroll to the bottom
+    }
+    var currentDate = new Date();
+    var year = currentDate.getFullYear();
+    var month = currentDate.getMonth() + 1; // Months are zero-indexed, so we add 1
+    var day = currentDate.getDate();
+    var formattedDate = year + '-' + (month < 10 ? '0' + month : month) + '-' + (day < 10 ? '0' + day : day);
+    
+</script>
+
+</html>

@@ -1,0 +1,58 @@
+.p1{
+    color:rgb(246, 255, 0) ;
+    font-size: 35px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    margin-left:300px ;
+}
+.gh{
+    width: 300px;
+    height: 400px;
+    border-radius: 25px;
+    padding: 10px;
+    background-color: rgb(15, 23, 68);
+    margin-left: 500px;
+}
+.i{
+    width: 20%;
+    margin-left:13cm;
+    padding: 10px;
+    border: 1px solid rgb(15, 23, 68);
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+    background-color: blueviolet;
+    color: yellow;
+}
+.sh{
+    display: none;
+    background-color:rgb(255, 247, 0) ;
+    font-size: 30px;
+    margin-left: 500px;
+    font-weight: bold;
+    font-family:'Courier New', Courier, monospace ;
+    margin-bottom: 30px;
+}
+
+
+/* Style for button */
+.b2 {
+    width: 5%;
+    background-color: yellow;
+    color: blueviolet;
+    padding: 14px 20px;
+    margin: 8px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 1s;
+}
+.i::placeholder{
+    color: yellow;
+}
+
+/* Change button color on hover */
+.b2:hover {
+    background-color: blueviolet;
+    color: yellow;
+}

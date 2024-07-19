@@ -1,0 +1,105 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static "arabic.css" %}">
+    <title>Document</title>
+</head>
+<header class="nav-bar">
+    <nav>
+    <section class="nav-name">
+    <a href="home.php"><img src="{% static "img/logo.png" %}" class="logo-project" alt=""></a>
+    </section>
+        <section class="others">
+            <section class="others1"><span class="others-subject" onclick="menu()">مواد</span><img class="others-arrow" id="menu-subject" src="{% static "img/arow.png" %}" alt=""  onclick="menu()" >
+            <section id="menu-bar1" class="menu-bar" style="display: none;" >
+                <a href="arabic.php">عربية</a>
+                <a href="pages/math.html">رياضيات</a>
+                <a href="pages/french.html">فرنسية</a>
+                <a href="pages/english.html">إنجليزية</a>
+                <a href="pages/igti.html">إجتماعيات </a>
+                <a href="pages/madania.html">ت.مدنية </a>
+                <a href="pages/islamic.html" style="margin-right: 5px;" >ت.إسلامية </a>
+            </section></section>
+            <section class="others1"><span class="others-subject">تواصل معنا</span><img class="others-arrow" src="{% static "img/arow.png" %}" alt=""></section>
+        </section>
+        <button class="sign-button" >سجل</button></section>
+</header>
+    <body style="background-image: url({% static "img/relation.jpg" %});">
+        <form  method="post"action="{% url 'sign' %}" >
+            {% csrf_token %} 
+            <p class="false_message" style="    color: #ff0000; /* Red color to indicate an error */
+    background-color: #ffe6e6; /* Light red background */
+    border: 1px solid #ff0000; /* Red border */
+    padding: 10px;
+    margin: 10px 0;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    border-radius: 4px;">{{ sign_same }}</p>
+    <p class="sign">يجب عليك التسجيل أولا</p>
+        <div class="n" style="backdrop-filter: blur(20px);">
+            <h3>قائمة التسجيل</h3>
+            <input type="text" name="na" placeholder="أدخل إسمك ولقبك" id="q3" class="input-sign">
+            <input type="text" name="par" placeholder="أدخل إسم ولقب ولدك" id="q4" class="input-sign">
+            <input type="text" name="type" placeholder="أدخل نوعك ولي/استاذ" id="q2" class="input-sign" >
+        <input type="email" name="email" placeholder="ادخل بريدك الإلكتروني" id="q1" class="input-sign" >
+        <input type="text" name="number" placeholder="ادخل رقمك الهاتفي" id="q1" class="input-sign" >
+        <p class="later">هل سجلت من قبل؟</p>
+        <input type="checkbox" class="check" name="check" >
+        <button onclick="ka();"name="sub" style="display:block;color: yellow;background-color:rgb(9,2,84) ;border:0px;box-shadow:0 0 10px black ;border-radius: 15px;width: 120px;font-size: 20px;height: 50px;font-family:cursive;margin-left: 120px;cursor: pointer;transition: 1.5s;font-weight: bold;" >سجل</button>
+    </div>
+    </form>
+</body>
+<script>
+    function menu(){
+        let Menu=document.getElementById('menu-bar1');
+        if (Menu.style.display === 'none') {
+            Menu.style.display = 'block';
+            Menu.style.display = 'flex';
+        }
+        else {
+            Menu.style.display = 'none';
+        }
+    }
+    function menu2() {
+    let Menu = document.getElementById('menu-bar2');
+
+    // Toggle display if it's currently hidden
+    if (Menu.style.display === 'none') {
+        Menu.style.display = 'block';
+        Menu.style.display = 'flex';
+    } else {
+        Menu.style.display = 'none'; // Hide the menu if it's currently shown
+    }
+
+    // Check if the height of the menu is less than or equal to 20
+    if (Menu.clientHeight <= 50) {
+        Menu.style.overflow = 'auto'; // Set overflow to auto if the height is less than or equal to 20
+    }
+}
+function ka() {
+    var so = document.getElementById('q1').value;
+    var so2 = document.getElementById('q2').value;
+    var so3 = document.getElementById('q3').value;
+    var so4= document.getElementById('q4').value;
+    if (so !== '' && so2 !== '' && so3 !== ''&& so4 !== '' && so3.length > 5 && so4.length > 5&& so2 == 'ولي'){
+        alert('شكرا سيدي الولي على ملئ إستمارة التسجيل ');
+        window.location.href="arabic_notes.html";
+    }
+    else if (so !== '' && so2 !== '' && so3 !== ''&& so4 !== '' && so3.length > 5 && so4.length > 5 && so2 == 'أستاذ'){
+        alert('شكرا سيدي الأستاذ على ملئ إستمارة التسجيل ');
+        window.location.href="teacher_arabic.html";
+    } else if (so === '' && so2 === '' && so3 === '' && so4 ==='' ) {
+        alert('من فضلك,أكمل كل الفراغات ');
+    } else {
+        alert('من فضلك,أكمل الفراغات المتبقيةأو أي خطإ آخر');
+    }
+}
+
+</script>
+
+
+
+</html>

@@ -1,0 +1,152 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    margin-top: 4cm;
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 300px;
+    margin: 20px;
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 15px;
+}
+
+.card-title {
+    font-size: 1.5em;
+    margin: 0 0 10px;
+}
+
+.card-text {
+    font-size: 1em;
+    color: #333;
+    margin: 0 0 20px;
+}
+
+.card-button {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.card-button:hover {
+    background-color: #0056b3;
+}
+header{
+    display: block;
+    box-shadow:0 0 10px black;
+}
+.sign-button{
+    color: yellow;
+    background-color:rgb(9,2,84) ;
+    border:0px;
+    box-shadow:0 0 10px black ;
+    border-radius: 15px;
+    width: 120px;
+    font-size: 20px;
+    height: 50px;
+    margin-top: 40px;
+    font-family:cursive;
+    margin-left: 350px;
+    cursor: pointer;
+    transition: 1.5s;
+    font-weight: bold;
+}
+.sign-button:hover{
+    transform: skew(30deg);
+}
+nav{
+    display: flex;
+    max-height:120px;
+}
+.logo-project{
+    width: 200px;
+    color: yellow;
+}
+.others-arrow{
+    width: 15px;
+    margin-left: 5px;
+    cursor:pointer;
+}
+.others-subject{
+    color: yellow;
+    font-family: cursive;
+    font-size: 25px;
+    cursor: pointer;
+}
+.others{
+    display: flex;
+    flex-direction: row;
+    margin-left: 150px;
+}
+.others1{
+    margin-top: 50px;
+    margin-left:50px;
+}
+.menu-bar{
+    display: flex;
+    flex-direction: column;
+    color: yellow;
+    font-family: cursive;
+    margin-left: 80px;
+    max-height: 120px;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+.menu-bar a{
+    text-decoration: none;
+    color: yellow;
+}
+.card-button {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.card-button:hover {
+    background-color: #0056b3;
+}
+.notification{
+    display: block;
+    font-weight: bold;
+    font-family: monospace;
+    background-color: #39921b;
+    font-size:30px;
+    opacity: 0.5;
+    color: white;
+}

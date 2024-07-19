@@ -1,0 +1,147 @@
+body{
+    margin:0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("{% static 'relation.jpg' %}");
+}
+header{
+    display: block;
+    box-shadow:0 0 10px black;
+}
+.sign-button{
+    color: yellow;
+    background-color:rgb(9,2,84) ;
+    border:0px;
+    box-shadow:0 0 10px black ;
+    border-radius: 15px;
+    width: 120px;
+    font-size: 20px;
+    height: 50px;
+    margin-top: 40px;
+    font-family:cursive;
+    margin-left: 350px;
+    cursor: pointer;
+    transition: 1.5s;
+    font-weight: bold;
+}
+.sign-button:hover{
+    transform: skew(30deg);
+}
+nav{
+    display: flex;
+    max-height:120px;
+}
+.logo-project{
+    width: 200px;
+    color: yellow;
+}
+.others-arrow{
+    width: 15px;
+    margin-left: 5px;
+    cursor:pointer;
+}
+.others-subject{
+    color: yellow;
+    font-family: cursive;
+    font-size: 25px;
+    cursor: pointer;
+}
+.others{
+    display: flex;
+    flex-direction: row;
+    margin-left: 150px;
+}
+.others1{
+    margin-top: 50px;
+    margin-left:50px;
+}
+.menu-bar{
+    display: flex;
+    flex-direction: column;
+    color: yellow;
+    font-family: cursive;
+    margin-left: 80px;
+    max-height: 120px;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+.menu-bar a{
+    text-decoration: none;
+    color: yellow;
+}
+.sign{
+    font-size: 50px;
+    color: yellow;
+    text-align: end;
+    margin-right: 4cm;
+    margin-top: 20px;
+    font-weight: bold;
+    font-family: cursive;
+}
+.input-sign{
+    padding-right: 100px;
+    padding-left: 50px;
+    padding-bottom: 20px;
+    padding-top: 10px;
+    border-radius: 25px;
+    background-color: rgb(21, 80, 156);
+    border: 0px;
+    display: block;
+    margin-bottom: 20px;
+    margin-right: 30px;
+    margin-left: 30px;
+}
+#q3,#q,#q1,#q2,#q4{
+    color: yellow;
+    font-family: monospace;
+}
+#q::placeholder{
+    color: yellow;
+}
+#q3::placeholder{
+    color: yellow;
+}
+#q1::placeholder{
+    color: yellow;
+}
+#q2::placeholder{
+    color: yellow;
+}
+#q4::placeholder{
+    color: yellow;
+}
+.n{
+    border-radius: 25px;
+    box-shadow: 0 0 10px cornflowerblue;
+    margin-left:26cm;
+    display: inline-block;
+    padding: 20px;
+    margin-bottom: 70px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    vertical-align: top;
+}
+h3{
+    color: yellow;
+    font-size: 40px;
+    margin-bottom: 60px;
+    text-align: center;
+}
+.later{
+    color: yellow;
+    margin-left: 40px;
+    margin-top: 20px;
+    font-size: 20px;
+    display: inline-block;
+}
+.check{
+    margin-left: 150px;
+}
+h1{
+    font-family: cinzel;
+    color: white;
+    font-size: 60px;
+    cursor: pointer;
+}
+
+

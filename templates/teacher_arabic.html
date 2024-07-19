@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static "teacher_arabic.css" %}">
+    <link rel="stylesheet" href="{% static "a.css" %}">
+    <title>Document</title>
+</head>
+<header class="nav-bar">
+    <nav>
+    <section class="nav-name">
+    <img src="{% static "img/logo.png" %}" class="logo-project" alt="">
+    </section>
+        <section class="others">
+            <section class="others1"><span class="others-subject" onclick="menu()">مواد</span><img class="others-arrow" id="menu-subject" src="{% static "img/arow.png" %}" alt=""  onclick="menu()" >
+            <section id="menu-bar1" class="menu-bar" style="display: none;" >
+                <a href="arabic.php">عربية</a>
+                <a href="pages/math.html">رياضيات</a>
+                <a href="pages/french.html">فرنسية</a>
+                <a href="pages/english.html">إنجليزية</a>
+                <a href="pages/igti.html">إجتماعيات </a>
+                <a href="pages/madania.html">ت.مدنية </a>
+                <a href="pages/islamic.html" style="margin-right: 5px;" >ت.إسلامية </a>
+            </section></section>
+            <section class="others1"><span class="others-subject">تواصل معنا</span><img class="others-arrow" src="{% static "img/arow.png" %}" alt=""></section>
+        </section>
+        <button class="sign-button" >سجل</button></section>
+</header>
+    <body style="background-image: url({% static "img/relation.jpg" %});">
+<div class="n" style="margin-top:3cm;backdrop-filter:blur(15px);" >
+    <p class="sign">قائمة إرسال الملاحظات</p>
+    <form action="{% url 'upload_notes' %}" method="post">
+        {% csrf_token %} 
+        <input name="na1" placeholder="أدخل اسم و لقب التلميذ" id="q2" class="input-sign" >
+    <input name="level" placeholder="ادخل سنة تمدرس التلميذ" id="q1" class="input-sign" >
+        <input name="note" placeholder="أكتب ملاحظاتك" id="q3" class="input-sign">
+    <button onclick="note();" class="teach" type="submit" name="subsmit">أرسل</button>
+    </form>    
+</div>
+    </body>
+
+    </html>
